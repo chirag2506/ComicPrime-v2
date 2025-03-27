@@ -7,7 +7,13 @@ export default function About() {
       <Paper sx={{ padding: 4, textAlign: "center" }}>
         <Typography variant="h4" gutterBottom>About This App</Typography>
         <Typography variant="body1">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          This project aims to help comic readers out there who might want to read comics (Marvel only, for now) in order of release from the beginning (they called me a Madman).
+        </Typography>
+        <Typography variant="body1">
+          I started this way back in 2020 ([V1 - Android App](https://github.com/chirag2506/ComicsPRIME-Android-)). Back then, the idea was to maintain the list of comics I have read. But then, I decided to read all Marvel comics published, so wrote a Python script to scrap the comics from official Marvel website into a word document.
+        </Typography>
+        <Typography variant="body1">
+          But it seems to be missing some comics, so I spent (wasted) much time comparing the scrapped list with the comics list available on the Marvel fandom, as and when I complete reading comics having cover date of a particular month. Now the problem in this is, there are a lot of titles that are just reprint titles or some are the ones that don't really matter to the greater comics continuity. Remembering each of these titles month after month seems to be a hassle, so I thought of solving this programmatically.
         </Typography>
       </Paper>
     </Container>
