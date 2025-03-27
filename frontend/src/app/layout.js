@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "ComicsPrime",
+  title: "ComicsPRIME",
   description: "Version 2 of Comics Prime",
   icons: {
     icon: '/cpOldLogo.png',

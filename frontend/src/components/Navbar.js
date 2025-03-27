@@ -15,7 +15,7 @@ export default function Navbar() {
 
     return (
         <>
-            <AppBar position="static" sx={{ backgroundColor: "#FF5722" }}>
+            <AppBar position="static" sx={{ backgroundColor: "#0c9b48" }}>
                 <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
                     <Link href="/" passHref>
                         <Box sx={{ width: 50, height: 50, position: "relative" }}>
@@ -26,7 +26,7 @@ export default function Navbar() {
                     {/* Desktop Navigation (Hidden on Small Screens) */}
                     <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
                         <Link href="/about" passHref><Button color="inherit">About</Button></Link>
-                        <Button color="inherit">News</Button>
+                        <Link href="/browse" passHref><Button color="inherit">Browse</Button></Link>
                         <Button color="inherit">Comics</Button>
                     </Box>
 
@@ -59,7 +59,7 @@ export default function Navbar() {
             >
                 <Box sx={{ display: "flex", flexDirection: "column", p: 2 }}>
                     <Link href="/about" passHref><Button color="inherit" onClick={handleDrawerToggle}>About</Button></Link>
-                    <Button color="inherit" onClick={handleDrawerToggle}>News</Button>
+                    <Link href="/browse" passHref><Button color="inherit" onClick={handleDrawerToggle}>Browse</Button></Link>
                     <Button color="inherit" onClick={handleDrawerToggle}>Comics</Button>
                     <Button color="inherit" onClick={handleDrawerToggle}>Login</Button>
                 </Box>

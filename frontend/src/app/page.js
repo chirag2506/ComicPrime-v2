@@ -5,15 +5,15 @@ export default function Home() {
   return (
     <Container maxWidth="lg" sx={{ textAlign: "center", padding: "40px 20px" }}>
       <Typography variant="h2" fontWeight="bold" gutterBottom>
-        Comic Book Reading Assistant
+        ComicsPRIME
       </Typography>
       <Typography variant="h6" color="textSecondary" paragraph>
-        Track and organize your comic book reading history effortlessly.
+        your friendly neighborhood comic guide...
       </Typography>
       <Button
         variant="contained"
         color="primary"
-        sx={{ marginTop: 2 }}
+        sx={{ marginTop: 2, backgroundColor: "#0c9b48" }}
         component={Link}
         href="/dashboard"
       >
