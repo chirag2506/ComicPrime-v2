@@ -1,5 +1,7 @@
 from logger import putlog
 import json, os
+from difflib import SequenceMatcher
+
 log = putlog(__file__)
 
 
@@ -34,13 +36,18 @@ def writeFile(filename, content):
 
     return status
 
-def writeJson(filename, content):
+def writeJson(filename, content, sortKeys = False):
     status = "Success"
     try:
-        contentDump = json.dumps(content, indent=4)
+        contentDump = json.dumps(content, indent=4, sort_keys= sortKeys)
         writeFile(filename, contentDump)
     except Exception as Err:
         log.error("{}".format(Err))
         status = "Failed"
 
     return status
+
+def similar(a, b):
+    return SequenceMatcher(None, a, b).ratio()
+print(similar("Amazing Spider-Man (MX)", "The Amazing Spider-Man"))
+# 0.85?
