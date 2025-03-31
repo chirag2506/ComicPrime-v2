@@ -49,5 +49,7 @@ def writeJson(filename, content, sortKeys = False):
 
 def similar(a, b):
     return SequenceMatcher(None, a, b).ratio()
-print(similar("Amazing Spider-Man (MX)", "The Amazing Spider-Man"))
-# 0.85?
+
+if __name__ == "__main__":
+    print(similar("Amazing Spider-Man (MX)", "The Amazing Spider-Man"))
+    # 0.85?
