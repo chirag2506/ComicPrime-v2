@@ -20,14 +20,14 @@ for month, metadata in comics.items():
     #     # November, 2006, Official Handbook of the Ultimate Marvel Universe #2 Book 2 #1
     #     # January, 2021, Captain America #117: Facsimile Edition #0
 
-    # checking if #issueNumber appears at end of each issue
-    for comic in metadata.get("comics", []):
-        nameComponents = comic.split(" ")
-        issueNumber = nameComponents[-1]
-        if not str(issueNumber).startswith("#"):
-            print(month)
-            print(comic)
-            print("*"*100)
-        # found 12 occurances: 1971, Apr, Nov  2006...
+    # # checking if #issueNumber appears at end of each issue
+    # for comic in metadata.get("comics", []):
+    #     nameComponents = comic.split(" ")
+    #     issueNumber = nameComponents[-1]
+    #     if not str(issueNumber).startswith("#"):
+    #         print(month)
+    #         print(comic)
+    #         print("*"*100)
+    #     # found 12 occurances: 1971, Apr, Nov  2006...
 
     True
