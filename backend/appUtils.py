@@ -1,12 +1,13 @@
 from logger import putlog
-import json, os
-from difflib import SequenceMatcher
+import json
+import os
 
 log = putlog(__file__)
 
 
 def readFile(filename):
     content = ""
+
     try:
         with open(filename, 'r') as fileContent:
             content = fileContent.read()
@@ -15,14 +16,17 @@ def readFile(filename):
 
     return content
 
+
 def readJson(filename):
     content = {}
+
     try:
         content = json.loads(readFile(filename))
     except Exception as Err:
-        log.error("{}".format(Err), exc_info=True)
+        log.error("{}".format(Err),exc_info=True)
 
     return content
+
 
 def writeFile(filename, content):
     os.makedirs(os.path.dirname(filename), exist_ok=True)
@@ -36,10 +40,12 @@ def writeFile(filename, content):
 
     return status
 
-def writeJson(filename, content, sortKeys = False):
+
+def writeJson(filename, content):
     status = "Success"
+
     try:
-        contentDump = json.dumps(content, indent=4, sort_keys= sortKeys)
+        contentDump = json.dumps(content, indent=4, sort_keys=True)
         writeFile(filename, contentDump)
     except Exception as Err:
         log.error("{}".format(Err))
@@ -47,9 +53,3 @@ def writeJson(filename, content, sortKeys = False):
 
     return status
 
-def similar(a, b):
-    return SequenceMatcher(None, a, b).ratio()
-
-if __name__ == "__main__":
-    print(similar("Amazing Spider-Man (MX)", "The Amazing Spider-Man"))
-    # 0.85?
