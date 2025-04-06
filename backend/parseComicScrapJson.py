@@ -11,37 +11,36 @@ for month, metadata in comics.items():
     # if countComics == False:
     #     print(month)
 
-    # checking for vol, issue
-    regex = "Vol [0-9]+ -?'?([0-9]+|∞|½|X)"
+    # # checking for vol, issue
+    # regex = "Vol [0-9]+ -?'?([0-9]+|∞|½|X)"
     
-    for comic in metadata.get("comics", []):
-        
-        # occ = re.findall(regex, comic)
-        occ = re.compile(regex)
-        for m in occ.finditer(comic):
-            print(m.start(), "helloo", m.group())
-        # if len(occ) != 1:
-        #     i += 1
-        #     log.info("https://marvel.fandom.com/wiki/{}".format(comic.replace(" ", "_")))
-        #     log.info(month)
-        #     log.info("*"*100)
-        # else:
-        #     print(occ)
+    # for comic in metadata.get("comics", []):
+    #     pattern = re.compile(regex)
+    #     occ = pattern.finditer(comic)
+    #     if(len(tuple(occ)) != 1):
+    #         i += 1
+    #         log.info("https://marvel.fandom.com/wiki/{}".format(comic.replace(" ", "_")))
+    #         log.info(month)
+    #         log.info("*"*100)
+    #     else:
+    #         for m in occ:
+    #             print(m.start(), ":", m.group())
             
 
     # # checking if vol, issue appears at end of each issue
     # regex = "Vol [0-9]+ -?'?([0-9]+|∞|½|X)"
-
+    
     # for comic in metadata.get("comics", []):
-    #     occ = re.findall(regex, comic)
-
-    #     # nameComponents = comic.split(" ")
-    #     # issueNumber = nameComponents[-1]
-    #     # if not str(issueNumber).startswith("#"):
-    #     #     print(month)
-    #     #     print(comic)
-    #     #     print("*"*100)
-    #     # found 12 occurances: 1971, Apr, Nov  2006...
-
+    #     pattern = re.compile(regex)
+    #     occ = pattern.finditer(comic)
+    #     occ = tuple(occ)
+    #     start = occ[0].start()
+    #     end = occ[0].end()
+    #     if (end != len(comic)):
+    #         i += 1
+    #         log.info(month)
+    #         log.info(comic)
+    #         log.info("*"*100)
+    #     #1229 comics
     True
 print(i)
