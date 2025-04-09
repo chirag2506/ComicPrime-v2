@@ -3,7 +3,7 @@
         "BaseDir": "{basePath}",
         "Mode" : 0,
         "Host" : "0.0.0.0",
-        "Port" : 5002
+        "Port" : 8080
     },
     "Database":{
         

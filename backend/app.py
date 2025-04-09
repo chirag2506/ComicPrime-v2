@@ -29,6 +29,6 @@ def base():
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, 
+    uvicorn.run("app:app", 
                 host=configuration["App"]["Host"],
-                port=configuration["App"]["Port"])
+                port=configuration["App"]["Port"], reload=True)
