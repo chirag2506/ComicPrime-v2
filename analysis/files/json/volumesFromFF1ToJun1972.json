@@ -1,141 +1,552 @@
 {
     "volumes": [
-        "Amazing Adult Fantasy Vol 1",
-        "Amazing Adventures Vol 1",
-        "Amazing Adventures Vol 2",
-        "Amazing Fantasy Vol 1",
-        "Amazing Spider-Man (MX) Vol 1",
-        "Amazing Spider-Man Annual Vol 1",
-        "Amazing Spider-Man Vol 1",
-        "Amazing Stories of Suspense Vol 1",
-        "Astonishing Tales Vol 1",
-        "Avengers Annual Vol 1",
-        "Avengers Vol 1",
-        "Black Rider (BR) Vol 1",
-        "Black Rider Extra Edition (BR) Vol 1",
-        "Capt. Savage and his Leatherneck Raiders Vol 1",
-        "Captain America (ES) Vol 1",
-        "Captain America Annual Vol 1",
-        "Captain America Vol 1",
-        "Captain Marvel (ES) Vol 1",
-        "Captain Marvel Vol 1",
-        "Chamada Geral Vol 1",
-        "Chamber of Darkness Special Vol 1",
-        "Chamber of Darkness Vol 1",
-        "Chili Special Vol 1",
-        "Chili Vol 1",
-        "Conan the Barbarian Vol 1",
-        "Creatures on the Loose Vol 1",
-        "Creepy Worlds Vol 1",
-        "Daredevil Annual Vol 1",
-        "Daredevil Vol 1",
-        "Defender Dan (ES) Vol 1",
-        "Doctor Strange Vol 1",
-        "Edi\u00e7\u00f5es Gep Vol 1",
-        "Fantastic 4 (ES) Vol 1",
-        "Fantastic 4: Giant Size (ES) Vol 1",
-        "Fantastic Four Annual Vol 1",
-        "Fantastic Four Vol 1",
-        "Fantastic! Annual Vol 1",
-        "Fantastic! Vol 1",
-        "Fantasy Masterpieces Vol 1",
-        "Fear Vol 1",
-        "Ghost Rider Vol 1",
-        "Giant Western Gunfighters (AU) Vol 1",
-        "Gunsmoke Western Vol 1",
-        "HIT Comics Vol 1",
-        "Harvey Vol 1",
-        "Heroes of the West (MX) Vol 1",
-        "Homer, the Happy Ghost Vol 2",
-        "Incredible Hulk Special Vol 1",
-        "Incredible Hulk Vol 1",
-        "Iron Man Annual Vol 1",
-        "Iron Man Vol 1",
-        "Iron Man and Sub-Mariner Vol 1",
-        "Journey Into Mystery Annual Vol 1",
-        "Journey Into Mystery Vol 1",
-        "Ka-Zar Vol 1",
-        "Kathy Vol 1",
-        "Kid Colt Outlaw Vol 1",
-        "Kull the Conqueror Vol 1",
-        "Li'l Kids Vol 1",
-        "Life With Millie Vol 1",
-        "Linda Carter, Student Nurse Vol 1",
-        "Love Romances Vol 1",
-        "Mad About Millie Annual Vol 1",
-        "Mad About Millie Vol 1",
-        "Marvel Collectors' Item Classics Vol 1",
-        "Marvel Feature Vol 1",
-        "Marvel Premiere Vol 1",
-        "Marvel Spotlight Vol 1",
-        "Marvel Story Book Annual 1967 Vol 1",
-        "Marvel Super-Heroes King-Size Special Vol 1",
-        "Marvel Super-Heroes Vol 1",
-        "Marvel Tales Vol 2",
-        "Marvel Team-Up Vol 1",
-        "Marvel Triple Action Vol 1",
-        "Marvel's Greatest Comics Vol 1",
-        "Marvelman Vol 1",
-        "Mighty Marvel Western Vol 1",
-        "Millie the Model Annual Vol 1",
-        "Millie the Model Comics Vol 1",
-        "Millie the Model Vol 1",
-        "Modeling With Millie Vol 1",
-        "Monster Madness Vol 1",
-        "Monsters on the Prowl Vol 1",
-        "My Love Vol 2",
-        "Namor (ES) Vol 1",
-        "Nick Fury, Agent of SHIELD (BR) Vol 1",
-        "Nick Fury, Agent of SHIELD Vol 1",
-        "Not Brand Echh Vol 1",
-        "O Judoka Vol 1",
-        "Our Love Story Vol 1",
-        "Outlaw Kid Vol 2",
-        "Patsy Walker Vol 1",
-        "Patsy and Hedy Vol 1",
-        "Peter the Little Pest Vol 1",
-        "Petey Vol 1",
-        "Pow! Annual Vol 1",
-        "Pow! Vol 1",
-        "Raio Negro Vol 1",
-        "Rawhide Kid King Size Special Vol 1",
-        "Rawhide Kid Vol 1",
-        "Ringo Kid Vol 2",
-        "Savage Tales Vol 1",
-        "Sgt. Fury Annual Vol 1",
-        "Sgt. Fury Vol 1",
-        "Silver Surfer Vol 1",
-        "Smash! Vol 1",
-        "Special Marvel Edition Vol 1",
-        "Spectacular Spider-Man Magazine Vol 1",
-        "Spider-Man (JP) Vol 1",
-        "Spiderman (ES) Vol 1",
-        "Spoof Vol 1",
-        "Strange (FR) Vol 1",
-        "Strange Tales Annual Vol 1",
-        "Strange Tales Vol 1",
-        "Sub-Mariner Annual Vol 1",
-        "Sub-Mariner Vol 2",
-        "Tales of Asgard Vol 1",
-        "Tales of Suspense Vol 1",
-        "Tales to Astonish Vol 1",
-        "Teen-Age Romance Vol 1",
-        "Terrific! Vol 1",
-        "Texas Kid (BR) Vol 1",
-        "The Adventures of Pussycat Vol 1",
-        "Thor King-Size Special Vol 1",
-        "Thor Vol 1",
-        "Tomb of Dracula Vol 1",
-        "Tower of Shadows King-Size Special Vol 1",
-        "Tower of Shadows Vol 1",
-        "Two-Gun Kid Vol 1",
-        "Western Gunfighters Vol 2",
-        "Western Kid Vol 2",
-        "Wham! Vol 1",
-        "Where Creatures Roam Vol 1",
-        "Where Monsters Dwell Vol 1",
-        "X-Men Annual Vol 1",
-        "X-Men Vol 1",
-        "X-Patrol (ES) Vol 1"
+        [
+            "Amazing Adult Fantasy Vol 1",
+            "https://marvel.fandom.com/wiki/Amazing_Adult_Fantasy_Vol_1"
+        ],
+        [
+            "Amazing Adventures Vol 1",
+            "https://marvel.fandom.com/wiki/Amazing_Adventures_Vol_1"
+        ],
+        [
+            "Amazing Adventures Vol 2",
+            "https://marvel.fandom.com/wiki/Amazing_Adventures_Vol_2"
+        ],
+        [
+            "Amazing Fantasy Vol 1",
+            "https://marvel.fandom.com/wiki/Amazing_Fantasy_Vol_1"
+        ],
+        [
+            "Amazing Spider-Man (MX) Vol 1",
+            "https://marvel.fandom.com/wiki/Amazing_Spider-Man_(MX)_Vol_1"
+        ],
+        [
+            "Amazing Spider-Man Annual Vol 1",
+            "https://marvel.fandom.com/wiki/Amazing_Spider-Man_Annual_Vol_1"
+        ],
+        [
+            "Amazing Spider-Man Vol 1",
+            "https://marvel.fandom.com/wiki/Amazing_Spider-Man_Vol_1"
+        ],
+        [
+            "Amazing Stories of Suspense Vol 1",
+            "https://marvel.fandom.com/wiki/Amazing_Stories_of_Suspense_Vol_1"
+        ],
+        [
+            "Astonishing Tales Vol 1",
+            "https://marvel.fandom.com/wiki/Astonishing_Tales_Vol_1"
+        ],
+        [
+            "Avengers Annual Vol 1",
+            "https://marvel.fandom.com/wiki/Avengers_Annual_Vol_1"
+        ],
+        [
+            "Avengers Vol 1",
+            "https://marvel.fandom.com/wiki/Avengers_Vol_1"
+        ],
+        [
+            "Black Rider (BR) Vol 1",
+            "https://marvel.fandom.com/wiki/Black_Rider_(BR)_Vol_1"
+        ],
+        [
+            "Black Rider Extra Edition (BR) Vol 1",
+            "https://marvel.fandom.com/wiki/Black_Rider_Extra_Edition_(BR)_Vol_1"
+        ],
+        [
+            "Capt. Savage and his Leatherneck Raiders Vol 1",
+            "https://marvel.fandom.com/wiki/Capt._Savage_and_his_Leatherneck_Raiders_Vol_1"
+        ],
+        [
+            "Captain America (ES) Vol 1",
+            "https://marvel.fandom.com/wiki/Captain_America_(ES)_Vol_1"
+        ],
+        [
+            "Captain America Annual Vol 1",
+            "https://marvel.fandom.com/wiki/Captain_America_Annual_Vol_1"
+        ],
+        [
+            "Captain America Vol 1",
+            "https://marvel.fandom.com/wiki/Captain_America_Vol_1"
+        ],
+        [
+            "Captain Marvel (ES) Vol 1",
+            "https://marvel.fandom.com/wiki/Captain_Marvel_(ES)_Vol_1"
+        ],
+        [
+            "Captain Marvel Vol 1",
+            "https://marvel.fandom.com/wiki/Captain_Marvel_Vol_1"
+        ],
+        [
+            "Chamada Geral Vol 1",
+            "https://marvel.fandom.com/wiki/Chamada_Geral_Vol_1"
+        ],
+        [
+            "Chamber of Darkness Special Vol 1",
+            "https://marvel.fandom.com/wiki/Chamber_of_Darkness_Special_Vol_1"
+        ],
+        [
+            "Chamber of Darkness Vol 1",
+            "https://marvel.fandom.com/wiki/Chamber_of_Darkness_Vol_1"
+        ],
+        [
+            "Chili Special Vol 1",
+            "https://marvel.fandom.com/wiki/Chili_Special_Vol_1"
+        ],
+        [
+            "Chili Vol 1",
+            "https://marvel.fandom.com/wiki/Chili_Vol_1"
+        ],
+        [
+            "Conan the Barbarian Vol 1",
+            "https://marvel.fandom.com/wiki/Conan_the_Barbarian_Vol_1"
+        ],
+        [
+            "Creatures on the Loose Vol 1",
+            "https://marvel.fandom.com/wiki/Creatures_on_the_Loose_Vol_1"
+        ],
+        [
+            "Creepy Worlds Vol 1",
+            "https://marvel.fandom.com/wiki/Creepy_Worlds_Vol_1"
+        ],
+        [
+            "Daredevil Annual Vol 1",
+            "https://marvel.fandom.com/wiki/Daredevil_Annual_Vol_1"
+        ],
+        [
+            "Daredevil Vol 1",
+            "https://marvel.fandom.com/wiki/Daredevil_Vol_1"
+        ],
+        [
+            "Defender Dan (ES) Vol 1",
+            "https://marvel.fandom.com/wiki/Defender_Dan_(ES)_Vol_1"
+        ],
+        [
+            "Doctor Strange Vol 1",
+            "https://marvel.fandom.com/wiki/Doctor_Strange_Vol_1"
+        ],
+        [
+            "Edi\u00e7\u00f5es Gep Vol 1",
+            "https://marvel.fandom.com/wiki/Edi\u00e7\u00f5es_Gep_Vol_1"
+        ],
+        [
+            "Fantastic 4 (ES) Vol 1",
+            "https://marvel.fandom.com/wiki/Fantastic_4_(ES)_Vol_1"
+        ],
+        [
+            "Fantastic 4: Giant Size (ES) Vol 1",
+            "https://marvel.fandom.com/wiki/Fantastic_4:_Giant_Size_(ES)_Vol_1"
+        ],
+        [
+            "Fantastic Four Annual Vol 1",
+            "https://marvel.fandom.com/wiki/Fantastic_Four_Annual_Vol_1"
+        ],
+        [
+            "Fantastic Four Vol 1",
+            "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1"
+        ],
+        [
+            "Fantastic! Annual Vol 1",
+            "https://marvel.fandom.com/wiki/Fantastic!_Annual_Vol_1"
+        ],
+        [
+            "Fantastic! Vol 1",
+            "https://marvel.fandom.com/wiki/Fantastic!_Vol_1"
+        ],
+        [
+            "Fantasy Masterpieces Vol 1",
+            "https://marvel.fandom.com/wiki/Fantasy_Masterpieces_Vol_1"
+        ],
+        [
+            "Fear Vol 1",
+            "https://marvel.fandom.com/wiki/Fear_Vol_1"
+        ],
+        [
+            "Ghost Rider Vol 1",
+            "https://marvel.fandom.com/wiki/Ghost_Rider_Vol_1"
+        ],
+        [
+            "Giant Western Gunfighters (AU) Vol 1",
+            "https://marvel.fandom.com/wiki/Giant_Western_Gunfighters_(AU)_Vol_1"
+        ],
+        [
+            "Gunsmoke Western Vol 1",
+            "https://marvel.fandom.com/wiki/Gunsmoke_Western_Vol_1"
+        ],
+        [
+            "HIT Comics Vol 1",
+            "https://marvel.fandom.com/wiki/HIT_Comics_Vol_1"
+        ],
+        [
+            "Harvey Vol 1",
+            "https://marvel.fandom.com/wiki/Harvey_Vol_1"
+        ],
+        [
+            "Heroes of the West (MX) Vol 1",
+            "https://marvel.fandom.com/wiki/Heroes_of_the_West_(MX)_Vol_1"
+        ],
+        [
+            "Homer, the Happy Ghost Vol 2",
+            "https://marvel.fandom.com/wiki/Homer,_the_Happy_Ghost_Vol_2"
+        ],
+        [
+            "Incredible Hulk Special Vol 1",
+            "https://marvel.fandom.com/wiki/Incredible_Hulk_Special_Vol_1"
+        ],
+        [
+            "Incredible Hulk Vol 1",
+            "https://marvel.fandom.com/wiki/Incredible_Hulk_Vol_1"
+        ],
+        [
+            "Iron Man Annual Vol 1",
+            "https://marvel.fandom.com/wiki/Iron_Man_Annual_Vol_1"
+        ],
+        [
+            "Iron Man Vol 1",
+            "https://marvel.fandom.com/wiki/Iron_Man_Vol_1"
+        ],
+        [
+            "Iron Man and Sub-Mariner Vol 1",
+            "https://marvel.fandom.com/wiki/Iron_Man_and_Sub-Mariner_Vol_1"
+        ],
+        [
+            "Journey Into Mystery Annual Vol 1",
+            "https://marvel.fandom.com/wiki/Journey_Into_Mystery_Annual_Vol_1"
+        ],
+        [
+            "Journey Into Mystery Vol 1",
+            "https://marvel.fandom.com/wiki/Journey_Into_Mystery_Vol_1"
+        ],
+        [
+            "Ka-Zar Vol 1",
+            "https://marvel.fandom.com/wiki/Ka-Zar_Vol_1"
+        ],
+        [
+            "Kathy Vol 1",
+            "https://marvel.fandom.com/wiki/Kathy_Vol_1"
+        ],
+        [
+            "Kid Colt Outlaw Vol 1",
+            "https://marvel.fandom.com/wiki/Kid_Colt_Outlaw_Vol_1"
+        ],
+        [
+            "Kull the Conqueror Vol 1",
+            "https://marvel.fandom.com/wiki/Kull_the_Conqueror_Vol_1"
+        ],
+        [
+            "Li'l Kids Vol 1",
+            "https://marvel.fandom.com/wiki/Li'l_Kids_Vol_1"
+        ],
+        [
+            "Life With Millie Vol 1",
+            "https://marvel.fandom.com/wiki/Life_With_Millie_Vol_1"
+        ],
+        [
+            "Linda Carter, Student Nurse Vol 1",
+            "https://marvel.fandom.com/wiki/Linda_Carter,_Student_Nurse_Vol_1"
+        ],
+        [
+            "Love Romances Vol 1",
+            "https://marvel.fandom.com/wiki/Love_Romances_Vol_1"
+        ],
+        [
+            "Mad About Millie Annual Vol 1",
+            "https://marvel.fandom.com/wiki/Mad_About_Millie_Annual_Vol_1"
+        ],
+        [
+            "Mad About Millie Vol 1",
+            "https://marvel.fandom.com/wiki/Mad_About_Millie_Vol_1"
+        ],
+        [
+            "Marvel Collectors' Item Classics Vol 1",
+            "https://marvel.fandom.com/wiki/Marvel_Collectors'_Item_Classics_Vol_1"
+        ],
+        [
+            "Marvel Feature Vol 1",
+            "https://marvel.fandom.com/wiki/Marvel_Feature_Vol_1"
+        ],
+        [
+            "Marvel Premiere Vol 1",
+            "https://marvel.fandom.com/wiki/Marvel_Premiere_Vol_1"
+        ],
+        [
+            "Marvel Spotlight Vol 1",
+            "https://marvel.fandom.com/wiki/Marvel_Spotlight_Vol_1"
+        ],
+        [
+            "Marvel Story Book Annual 1967 Vol 1",
+            "https://marvel.fandom.com/wiki/Marvel_Story_Book_Annual_1967_Vol_1"
+        ],
+        [
+            "Marvel Super-Heroes King-Size Special Vol 1",
+            "https://marvel.fandom.com/wiki/Marvel_Super-Heroes_King-Size_Special_Vol_1"
+        ],
+        [
+            "Marvel Super-Heroes Vol 1",
+            "https://marvel.fandom.com/wiki/Marvel_Super-Heroes_Vol_1"
+        ],
+        [
+            "Marvel Tales Vol 2",
+            "https://marvel.fandom.com/wiki/Marvel_Tales_Vol_2"
+        ],
+        [
+            "Marvel Team-Up Vol 1",
+            "https://marvel.fandom.com/wiki/Marvel_Team-Up_Vol_1"
+        ],
+        [
+            "Marvel Triple Action Vol 1",
+            "https://marvel.fandom.com/wiki/Marvel_Triple_Action_Vol_1"
+        ],
+        [
+            "Marvel's Greatest Comics Vol 1",
+            "https://marvel.fandom.com/wiki/Marvel's_Greatest_Comics_Vol_1"
+        ],
+        [
+            "Marvelman Vol 1",
+            "https://marvel.fandom.com/wiki/Marvelman_Vol_1"
+        ],
+        [
+            "Mighty Marvel Western Vol 1",
+            "https://marvel.fandom.com/wiki/Mighty_Marvel_Western_Vol_1"
+        ],
+        [
+            "Millie the Model Annual Vol 1",
+            "https://marvel.fandom.com/wiki/Millie_the_Model_Annual_Vol_1"
+        ],
+        [
+            "Millie the Model Comics Vol 1",
+            "https://marvel.fandom.com/wiki/Millie_the_Model_Comics_Vol_1"
+        ],
+        [
+            "Millie the Model Vol 1",
+            "https://marvel.fandom.com/wiki/Millie_the_Model_Vol_1"
+        ],
+        [
+            "Modeling With Millie Vol 1",
+            "https://marvel.fandom.com/wiki/Modeling_With_Millie_Vol_1"
+        ],
+        [
+            "Monster Madness Vol 1",
+            "https://marvel.fandom.com/wiki/Monster_Madness_Vol_1"
+        ],
+        [
+            "Monsters on the Prowl Vol 1",
+            "https://marvel.fandom.com/wiki/Monsters_on_the_Prowl_Vol_1"
+        ],
+        [
+            "My Love Vol 2",
+            "https://marvel.fandom.com/wiki/My_Love_Vol_2"
+        ],
+        [
+            "Namor (ES) Vol 1",
+            "https://marvel.fandom.com/wiki/Namor_(ES)_Vol_1"
+        ],
+        [
+            "Nick Fury, Agent of SHIELD (BR) Vol 1",
+            "https://marvel.fandom.com/wiki/Nick_Fury,_Agent_of_SHIELD_(BR)_Vol_1"
+        ],
+        [
+            "Nick Fury, Agent of SHIELD Vol 1",
+            "https://marvel.fandom.com/wiki/Nick_Fury,_Agent_of_SHIELD_Vol_1"
+        ],
+        [
+            "Not Brand Echh Vol 1",
+            "https://marvel.fandom.com/wiki/Not_Brand_Echh_Vol_1"
+        ],
+        [
+            "O Judoka Vol 1",
+            "https://marvel.fandom.com/wiki/O_Judoka_Vol_1"
+        ],
+        [
+            "Our Love Story Vol 1",
+            "https://marvel.fandom.com/wiki/Our_Love_Story_Vol_1"
+        ],
+        [
+            "Outlaw Kid Vol 2",
+            "https://marvel.fandom.com/wiki/Outlaw_Kid_Vol_2"
+        ],
+        [
+            "Patsy Walker Vol 1",
+            "https://marvel.fandom.com/wiki/Patsy_Walker_Vol_1"
+        ],
+        [
+            "Patsy and Hedy Vol 1",
+            "https://marvel.fandom.com/wiki/Patsy_and_Hedy_Vol_1"
+        ],
+        [
+            "Peter the Little Pest Vol 1",
+            "https://marvel.fandom.com/wiki/Peter_the_Little_Pest_Vol_1"
+        ],
+        [
+            "Petey Vol 1",
+            "https://marvel.fandom.com/wiki/Petey_Vol_1"
+        ],
+        [
+            "Pow! Annual Vol 1",
+            "https://marvel.fandom.com/wiki/Pow!_Annual_Vol_1"
+        ],
+        [
+            "Pow! Vol 1",
+            "https://marvel.fandom.com/wiki/Pow!_Vol_1"
+        ],
+        [
+            "Raio Negro Vol 1",
+            "https://marvel.fandom.com/wiki/Raio_Negro_Vol_1"
+        ],
+        [
+            "Rawhide Kid King Size Special Vol 1",
+            "https://marvel.fandom.com/wiki/Rawhide_Kid_King_Size_Special_Vol_1"
+        ],
+        [
+            "Rawhide Kid Vol 1",
+            "https://marvel.fandom.com/wiki/Rawhide_Kid_Vol_1"
+        ],
+        [
+            "Ringo Kid Vol 2",
+            "https://marvel.fandom.com/wiki/Ringo_Kid_Vol_2"
+        ],
+        [
+            "Savage Tales Vol 1",
+            "https://marvel.fandom.com/wiki/Savage_Tales_Vol_1"
+        ],
+        [
+            "Sgt. Fury Annual Vol 1",
+            "https://marvel.fandom.com/wiki/Sgt._Fury_Annual_Vol_1"
+        ],
+        [
+            "Sgt. Fury Vol 1",
+            "https://marvel.fandom.com/wiki/Sgt._Fury_Vol_1"
+        ],
+        [
+            "Silver Surfer Vol 1",
+            "https://marvel.fandom.com/wiki/Silver_Surfer_Vol_1"
+        ],
+        [
+            "Smash! Vol 1",
+            "https://marvel.fandom.com/wiki/Smash!_Vol_1"
+        ],
+        [
+            "Special Marvel Edition Vol 1",
+            "https://marvel.fandom.com/wiki/Special_Marvel_Edition_Vol_1"
+        ],
+        [
+            "Spectacular Spider-Man Magazine Vol 1",
+            "https://marvel.fandom.com/wiki/Spectacular_Spider-Man_Magazine_Vol_1"
+        ],
+        [
+            "Spider-Man (JP) Vol 1",
+            "https://marvel.fandom.com/wiki/Spider-Man_(JP)_Vol_1"
+        ],
+        [
+            "Spiderman (ES) Vol 1",
+            "https://marvel.fandom.com/wiki/Spiderman_(ES)_Vol_1"
+        ],
+        [
+            "Spoof Vol 1",
+            "https://marvel.fandom.com/wiki/Spoof_Vol_1"
+        ],
+        [
+            "Strange (FR) Vol 1",
+            "https://marvel.fandom.com/wiki/Strange_(FR)_Vol_1"
+        ],
+        [
+            "Strange Tales Annual Vol 1",
+            "https://marvel.fandom.com/wiki/Strange_Tales_Annual_Vol_1"
+        ],
+        [
+            "Strange Tales Vol 1",
+            "https://marvel.fandom.com/wiki/Strange_Tales_Vol_1"
+        ],
+        [
+            "Sub-Mariner Annual Vol 1",
+            "https://marvel.fandom.com/wiki/Sub-Mariner_Annual_Vol_1"
+        ],
+        [
+            "Sub-Mariner Vol 2",
+            "https://marvel.fandom.com/wiki/Sub-Mariner_Vol_2"
+        ],
+        [
+            "Tales of Asgard Vol 1",
+            "https://marvel.fandom.com/wiki/Tales_of_Asgard_Vol_1"
+        ],
+        [
+            "Tales of Suspense Vol 1",
+            "https://marvel.fandom.com/wiki/Tales_of_Suspense_Vol_1"
+        ],
+        [
+            "Tales to Astonish Vol 1",
+            "https://marvel.fandom.com/wiki/Tales_to_Astonish_Vol_1"
+        ],
+        [
+            "Teen-Age Romance Vol 1",
+            "https://marvel.fandom.com/wiki/Teen-Age_Romance_Vol_1"
+        ],
+        [
+            "Terrific! Vol 1",
+            "https://marvel.fandom.com/wiki/Terrific!_Vol_1"
+        ],
+        [
+            "Texas Kid (BR) Vol 1",
+            "https://marvel.fandom.com/wiki/Texas_Kid_(BR)_Vol_1"
+        ],
+        [
+            "The Adventures of Pussycat Vol 1",
+            "https://marvel.fandom.com/wiki/The_Adventures_of_Pussycat_Vol_1"
+        ],
+        [
+            "Thor King-Size Special Vol 1",
+            "https://marvel.fandom.com/wiki/Thor_King-Size_Special_Vol_1"
+        ],
+        [
+            "Thor Vol 1",
+            "https://marvel.fandom.com/wiki/Thor_Vol_1"
+        ],
+        [
+            "Tomb of Dracula Vol 1",
+            "https://marvel.fandom.com/wiki/Tomb_of_Dracula_Vol_1"
+        ],
+        [
+            "Tower of Shadows King-Size Special Vol 1",
+            "https://marvel.fandom.com/wiki/Tower_of_Shadows_King-Size_Special_Vol_1"
+        ],
+        [
+            "Tower of Shadows Vol 1",
+            "https://marvel.fandom.com/wiki/Tower_of_Shadows_Vol_1"
+        ],
+        [
+            "Two-Gun Kid Vol 1",
+            "https://marvel.fandom.com/wiki/Two-Gun_Kid_Vol_1"
+        ],
+        [
+            "Western Gunfighters Vol 2",
+            "https://marvel.fandom.com/wiki/Western_Gunfighters_Vol_2"
+        ],
+        [
+            "Western Kid Vol 2",
+            "https://marvel.fandom.com/wiki/Western_Kid_Vol_2"
+        ],
+        [
+            "Wham! Vol 1",
+            "https://marvel.fandom.com/wiki/Wham!_Vol_1"
+        ],
+        [
+            "Where Creatures Roam Vol 1",
+            "https://marvel.fandom.com/wiki/Where_Creatures_Roam_Vol_1"
+        ],
+        [
+            "Where Monsters Dwell Vol 1",
+            "https://marvel.fandom.com/wiki/Where_Monsters_Dwell_Vol_1"
+        ],
+        [
+            "X-Men Annual Vol 1",
+            "https://marvel.fandom.com/wiki/X-Men_Annual_Vol_1"
+        ],
+        [
+            "X-Men Vol 1",
+            "https://marvel.fandom.com/wiki/X-Men_Vol_1"
+        ],
+        [
+            "X-Patrol (ES) Vol 1",
+            "https://marvel.fandom.com/wiki/X-Patrol_(ES)_Vol_1"
+        ]
     ]
 }
