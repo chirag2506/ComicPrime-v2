@@ -1,30 +1,30 @@
 from bs4 import BeautifulSoup as soup
 from urllib.request import urlopen as uReq
 
-name = "House of Harkness Infinity Comic"
-volume = 1
-issue = 12
-URL = "https://marvel.fandom.com/wiki/{name}_Vol_{volume}_{issue}".format(
-    name = name.replace(" ", "_"),
-    volume = volume,
-    issue = issue
-)
 
-myUrl = URL
-uClient = uReq(myUrl)
-pageHtml = uClient.read()
-uClient.close()
-pageSoup = soup(pageHtml, "html.parser")
+def getPublishDate(pageSoup: soup):
+    text = "Unknown"
+    containers = pageSoup.findAll("div", {"data-source": "ReleaseDate"})
 
-containers = pageSoup.findAll("div", {"data-source": "ReleaseDate"})
+    if(len(containers) > 0):
+        text = containers[0].div.a.text
+    return text
 
-if(len(containers) > 0):
-    text = containers[0].div.a.text
-    print(text)
+if __name__ == "__main__":
+    name = "House of Harkness Infinity Comic"
+    volume = 1
+    issue = 12
 
-# comicNames = []
-# for container in containers:
-#     comicNameLink = container.findAll("a", {"class": "category-page__member-link"})
-#     comicNames.append(comicNameLink[0].text)
+    URL = "https://marvel.fandom.com/wiki/{name}_Vol_{volume}_{issue}".format(
+        name = name.replace(" ", "_"),
+        volume = volume,
+        issue = issue
+    )
 
-# print(comicNames)
+    myUrl = URL
+    uClient = uReq(myUrl)
+    pageHtml = uClient.read()
+    uClient.close()
+    pageSoup = soup(pageHtml, "html.parser")
+    date = getPublishDate(pageSoup)
+    print(date)

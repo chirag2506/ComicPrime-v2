@@ -4,6 +4,10 @@ from firebase_admin import firestore
 from google.cloud.firestore_v1.base_query import FieldFilter
 from utilities import *
 import re
+from bs4 import BeautifulSoup as soup
+from urllib.request import urlopen as uReq
+from scrapPublishDate import getPublishDate
+from checkForReprint import checkReprint
 
 cred = credentials.Certificate("files/json/credentials.json")
 app = firebase_admin.initialize_app(cred)
@@ -13,62 +17,61 @@ months = readJson("files/json/comicsScrapBeforeFF1.json")
 
 regex = "Vol [0-9]+"
 
-titlesRef = db.collection("titles")
+titlesRef = db.collection("titlesTemp")
+comicsRef = db.collection("comics")
 titles = titlesRef.stream()
-query1 = titlesRef.where(filter=FieldFilter("volume", "==", 2)).stream()
-query2 = titlesRef.where(filter=FieldFilter("volume", "==", 1)).stream()
 
-print(len(titles))
-print(len(query1))
-print(len(query2))
+inDb = []
 
-# docs = (
-#     db.collection("cities")
-#     .where(filter=FieldFilter("capital", "==", True))
-#     .stream()
-# )
+for doc in titles:
+    inDb.append(doc.id)
+    # print(f"{doc.id} => {doc.to_dict()}")
 
-# for doc in query1:
-#     print(f"{doc.id} => {doc.to_dict()}")
+print(inDb)
 
-# for doc in titles:
-#     print(f"{doc.id} => {doc.to_dict()}")
-
-
-# for month, metadata in months.items():
-#     print(month)
-#     comics = metadata.get("comics", [])
-#     for comic in comics:
-#         pattern = re.compile(regex)
-#         occ = pattern.finditer(comic)
-#         occ = tuple(occ)
-#         if(len(occ) == 1):
-#             name = comic[ : occ[0].start()].strip()
-#             vol = int(comic[occ[0].start()+4 : occ[0].end()+1].strip())
-#             issue = comic[occ[0].end()+1 : ]
-#             print(name, ":", vol, ":", issue)
-#             volumeUrl = "https://marvel.fandom.com/wiki/{}_Vol_{}".format(name.replace(" ", "_"), vol)
-#             comicUrl = "https://marvel.fandom.com/wiki/{}".format(comic.replace(" ", "_"))
-#             print(volumeUrl)
-#             print("*"*100)
-
-
-# for volume in toBeRead:
-#     pattern = re.compile(regex)
-#     occ = pattern.finditer(volume)
-#     occ = tuple(occ)
-#     if(len(occ) == 1):
-#         name = volume[:occ[0].start()].strip()
-#         num = int(volume[occ[0].start()+4:].strip())
-#         print("{}, Vol {}".format(name, num))
-#         keyName = re.sub("[^A-Za-z0-9]+", "", "{}vol{}".format(name, num)).lower()
-#         url = "https://marvel.fandom.com/wiki/{}".format(volume.replace(" ", "_"))
-#         docRef = db.collection("titles").document(keyName)
-#         docRef.set({
-#             "volume": num,
-#             "title": name,
-#             "toBeRead": True,
-#             "url": url
-#         })
-#     else:
-#         print("Not possible: {}".format(volume))
+for month, metadata in months.items():
+    print(month)
+    comics = metadata.get("comics", [])
+    for comic in comics:
+        pattern = re.compile(regex)
+        occ = pattern.finditer(comic)
+        occ = tuple(occ)
+        if(len(occ) == 1):
+            cMonth = month.split(",")[0].strip()
+            cYear = int(month.split(",")[1].strip())
+            name = comic[ : occ[0].start()].strip()
+            vol = int(comic[occ[0].start()+4 : occ[0].end()+1].strip())
+            issue = comic[occ[0].end()+1 : ]
+            #check if volume added
+            volKeyName = re.sub("[^A-Za-z0-9]+", "", "{}vol{}".format(name, vol)).lower()
+            if volKeyName not in inDb:
+                volumeUrl = "https://marvel.fandom.com/wiki/{}_Vol_{}".format(name.replace(" ", "_"), vol)
+                # log.info("{} : {} : {}".format(name, vol, issue))
+                volRef = titlesRef.document(volKeyName)
+                volRef.set({
+                    "volume": vol,
+                    "title": name,
+                    "toBeRead": False,
+                    "url": volumeUrl
+                })
+                inDb.append(volKeyName)            
+            comicUrl = "https://marvel.fandom.com/wiki/{}".format(comic.replace(" ", "_"))
+            uClient = uReq(comicUrl)
+            pageHtml = uClient.read()
+            uClient.close()
+            pageSoup = soup(pageHtml, "html.parser")
+            isReprint = checkReprint(pageSoup, name, vol, issue)
+            publishDate = getPublishDate(pageSoup)
+            keyName = re.sub("[^A-Za-z0-9]+", "", "{}vol{}issue{}".format(name, vol, issue)).lower()
+            comicRef = comicsRef.document(keyName)
+            comicRef.set({
+                "volume": vol,
+                "title": name,
+                "issue": str(issue),
+                "toBeRead": False,
+                "coverMonth": cMonth,
+                "coverDate": cYear,
+                "releaseDate": publishDate,
+                "reprint": isReprint,
+                "url": comicUrl
+            })
