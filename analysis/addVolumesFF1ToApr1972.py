@@ -8,7 +8,7 @@ cred = credentials.Certificate("files/json/credentials.json")
 app = firebase_admin.initialize_app(cred)
 db = firestore.client()
 
-volumes = readJson("files/json/volumesFromFF1ToJun1972Clean.json")
+volumes = readJson("files/json/volumesFromFF1ToApr1972Clean.json")
 
 # print(volumes)
 toBeRead = volumes.get("ToBeRead")

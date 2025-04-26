@@ -54,14 +54,6 @@ def getComicDetails(month, comic):
         pageSoup = soup(pageHtml, "html.parser")
         isReprint = checkReprint(pageSoup, name, vol, issue)
         publishDate = getPublishDate(pageSoup)
-        comicDetails = Comic(coverYear=cYear, coverMonth=cMonth, issue=str(issue), releaseDate=publishDate, reprint=isReprint, title=name, 
-                             toBeRead=True, ######################### LOGIC TO BE UPDATED
-                             url=comicUrl, volume=vol)
-    
-def addComicToFirestore(details: Comic):
-    ...
-        
-
 
 # Worker function for processing tasks
 def worker(taskQueue, processId):

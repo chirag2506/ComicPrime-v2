@@ -25,4 +25,4 @@ for month, metadata in comics.items():
 content["volumes"] = sorted(list(set(volumes)))
 for i, volume in enumerate(content["volumes"]):
     content["volumes"][i] = [volume, "https://marvel.fandom.com/wiki/{}".format(volume.replace(" ", "_"))]
-writeJson("files/json/volumesFromFF1ToJun1972.json", content)
+writeJson("files/json/volumesFromFF1ToApr1972.json", content)
