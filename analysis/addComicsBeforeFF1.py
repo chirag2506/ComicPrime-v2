@@ -70,7 +70,7 @@ for month, metadata in months.items():
                 "issue": str(issue),
                 "toBeRead": False,
                 "coverMonth": cMonth,
-                "coverDate": cYear,
+                "coverYear": cYear,
                 "releaseDate": publishDate,
                 "reprint": isReprint,
                 "url": comicUrl
