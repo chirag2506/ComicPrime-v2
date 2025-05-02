@@ -31,5 +31,5 @@ for month, metadata in months.items():
             query = comicsRef.where(
                 filter=FieldFilter("title", "==", name)
             ).where(filter=FieldFilter("volume", "==", vol)).where(filter=FieldFilter("issue", "==", str(issue))).get()
-            if (len(query) > 1):
+            if (len(query) != 1 ):
                 log.info("{} Vol {} Issue {}: {} {}".format(name, vol, issue, cMonth, cYear))
