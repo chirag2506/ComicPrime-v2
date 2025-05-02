@@ -1,4 +1,3 @@
-
 from utilities import *
 from schema import *
 import re
@@ -8,19 +7,14 @@ from firebase_admin import firestore
 from google.cloud.firestore_v1.base_query import FieldFilter
 import multiprocessing
 import multiprocessing.queues
-from utilities import *
-from schema import *
-import re
-import firebase_admin
-from firebase_admin import credentials
-from firebase_admin import firestore
 from datetime import datetime
 
 cred = credentials.Certificate("files/json/credentials.json")
 app = firebase_admin.initialize_app(cred)
 db = firestore.client()
 
-months = readJson("files/json/comics1970s.json")
+# months = readJson("files/json/comics1970s.json")
+months = readJson("files/json/comics1980s.json")
 regex = "Vol [0-9]+"
 comicsRef = db.collection("comics")
 

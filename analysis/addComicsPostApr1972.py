@@ -17,7 +17,8 @@ cred = credentials.Certificate("files/json/credentials.json")
 app = firebase_admin.initialize_app(cred)
 db = firestore.client()
 
-months = readJson("files/json/comics1970s.json")
+# months = readJson("files/json/comics1970s.json")
+months = readJson("files/json/comics1980s.json")
 volumes = readJson("files/json/volumesFromFF1ToApr1972Clean.json")
 volumesToBeRead = volumes["ToBeRead"]
 volumesIgnore = volumes["Ignore"]
