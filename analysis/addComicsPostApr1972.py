@@ -25,7 +25,7 @@ regex = "Vol [0-9]+"
 comicsRef = db.collection("comics")
 titlesRef = db.collection("titles")
 
-def getComicDetails(month, comic, firestoreComicQueue, firestoreVolumeQueue):
+def getComicDetails(month, comic, firestoreComicQueue):
     try:
         pattern = re.compile(regex)
         occ = pattern.finditer(comic)
@@ -56,7 +56,7 @@ def getComicDetails(month, comic, firestoreComicQueue, firestoreVolumeQueue):
             firestoreComicQueue.put(comicDetails)
             volumeUrl = "https://marvel.fandom.com/wiki/{}_Vol_{}".format(name.replace(" ", "_"), vol)
             volume = Volume(title = name, toBeRead = True, volume = vol, url = volumeUrl)
-            firestoreVolumeQueue.put(volume)
+            firestoreComicQueue.put(volume)
         else:
             log.error("Cannot do as length != 1: {} ".format(comic))
     except Exception as e:
@@ -100,12 +100,12 @@ def addVolumeToFirestore(details: Volume):
         
 
 # Worker function for processing tasks
-def workerComic(taskQueue, processId, firestoreComicQueue, firestoreVolumeQueue):
+def workerComic(taskQueue, processId, firestoreComicQueue):
     while True:
         try:
             task = taskQueue.get(timeout=300)  # wait for a task
             log.debug(f"Comic worker Process-{processId} processing {task}")
-            getComicDetails(task[0], task[1], firestoreComicQueue, firestoreVolumeQueue)
+            getComicDetails(task[0], task[1], firestoreComicQueue)
         except multiprocessing.queues.Empty:
             print(f"Comic worker Process-{processId}: No more tasks, exiting.")
             break
@@ -117,28 +117,31 @@ def workerFirestoreComic(taskQueue, processId):
         try:
             task = taskQueue.get(timeout=300)
             # print(f"Firestore comic Process-{processId} processing {task}")
-            addComicToFirestore(task)
+            if isinstance(task, Comic):
+                addComicToFirestore(task)
+            elif isinstance(task, Volume):
+                addVolumeToFirestore(task)
         except multiprocessing.queues.Empty:
             print(f"Firestore comic Process-{processId}: No more tasks, exiting.")
             break
         taskQueue.task_done()
 
-def workerFirestoreVolume(taskQueue, processId):
-    while True:
-        try:
-            task = taskQueue.get(timeout=300)
-            # print(f"Firestore comic Process-{processId} processing {task}")
-            addVolumeToFirestore(task)
-        except multiprocessing.queues.Empty:
-            print(f"Firestore volume Process-{processId}: No more tasks, exiting.")
-            break
-        taskQueue.task_done()
+# def workerFirestoreVolume(taskQueue, processId):
+#     while True:
+#         try:
+#             task = taskQueue.get(timeout=300)
+#             # print(f"Firestore comic Process-{processId} processing {task}")
+#             addVolumeToFirestore(task)
+#         except multiprocessing.queues.Empty:
+#             print(f"Firestore volume Process-{processId}: No more tasks, exiting.")
+#             break
+#         taskQueue.task_done()
 
 if __name__ == "__main__":
     start = datetime.now()
     multiprocessing.set_start_method("spawn")
 
-    numProcesses = 6
+    numProcesses = 8
     manager = multiprocessing.Manager()
     taskQueue = manager.Queue()
     firestoreComicQueue = manager.Queue()
@@ -153,17 +156,12 @@ if __name__ == "__main__":
     processes: list[multiprocessing.Process] = []
     
     for i in range(numProcesses):
-        p = multiprocessing.Process(target=workerComic, args=(taskQueue, i, firestoreComicQueue, firestoreVolumeQueue))
+        p = multiprocessing.Process(target=workerComic, args=(taskQueue, i, firestoreComicQueue))
         p.start()
         processes.append(p)
 
     for i in range(numProcesses):
         p = multiprocessing.Process(target=workerFirestoreComic, args=(firestoreComicQueue, i))
-        p.start()
-        processes.append(p)
-    
-    for i in range(numProcesses):
-        p = multiprocessing.Process(target=workerFirestoreVolume, args=(firestoreComicQueue, i))
         p.start()
         processes.append(p)
 
