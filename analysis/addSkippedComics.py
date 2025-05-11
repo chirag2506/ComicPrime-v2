@@ -17,12 +17,7 @@ cred = credentials.Certificate("files/json/credentials.json")
 app = firebase_admin.initialize_app(cred)
 db = firestore.client()
 
-# months = readJson("files/json/comics1970s.json")
-# months = readJson("files/json/comics1980s.json")
-# months = readJson("files/json/comics1990s.json")
-# months = readJson("files/json/comics2000s.json")
-# months = readJson("files/json/comics2010s.json")
-months = readJson("files/json/comics2020s.json")
+months = readJson("files/json/comics1990sSkippedNew.json")
 volumes = readJson("files/json/volumesFromFF1ToApr1972Clean.json")
 volumesToBeRead = volumes["ToBeRead"]
 volumesIgnore = volumes["Ignore"]
@@ -70,7 +65,6 @@ def getComicDetails(month, comic, firestoreComicQueue):
 def addComicToFirestore(details: Comic):
     try:
         log.debug("Calling firestore comics for: {} Vol {} Issue {}".format(details.title, details.volume, details.issue))
-        # keyName = re.sub("[^A-Za-z0-9]+", "", "{}vol{}issue{}".format(details.title, details.volume, details.issue)).lower()
         keyName = "{}vol{}issue{}".format(details.title, details.volume, details.issue).replace(" ", "space").replace("/", "solidus").lower()
         comicRef = comicsRef.document(keyName)
         comicRef.set({
@@ -92,7 +86,7 @@ def addVolumeToFirestore(details: Volume):
         name = "{} Vol {}".format(details.title, details.volume)
         log.debug("Calling firestore volumes for: {}".format(name))
         volKeyName = "{}vol{}".format(details.title, details.volume).replace(" ", "space").replace("/", "solidus").lower()
-        if name not in volumesToBeRead and name not in volumesIgnore:
+        if name not in volumesToBeRead and volKeyName not in volumesIgnore:
             volRef = titlesRef.document(volKeyName)
             volRef.set({
                 "volume": details.volume,
@@ -109,7 +103,7 @@ def addVolumeToFirestore(details: Volume):
 def workerComic(taskQueue, processId, firestoreComicQueue):
     while True:
         try:
-            task = taskQueue.get(timeout=300)  # wait for a task
+            task = taskQueue.get(timeout=30)  # wait for a task
             log.debug(f"Comic worker Process-{processId} processing {task}")
             getComicDetails(task[0], task[1], firestoreComicQueue)
         except multiprocessing.queues.Empty:
@@ -121,7 +115,7 @@ def workerComic(taskQueue, processId, firestoreComicQueue):
 def workerFirestoreComic(taskQueue, processId):
     while True:
         try:
-            task = taskQueue.get(timeout=300)
+            task = taskQueue.get(timeout=30)
             # print(f"Firestore comic Process-{processId} processing {task}")
             if isinstance(task, Comic):
                 addComicToFirestore(task)
@@ -131,17 +125,6 @@ def workerFirestoreComic(taskQueue, processId):
             print(f"Firestore comic Process-{processId}: No more tasks, exiting.")
             break
         taskQueue.task_done()
-
-# def workerFirestoreVolume(taskQueue, processId):
-#     while True:
-#         try:
-#             task = taskQueue.get(timeout=300)
-#             # print(f"Firestore comic Process-{processId} processing {task}")
-#             addVolumeToFirestore(task)
-#         except multiprocessing.queues.Empty:
-#             print(f"Firestore volume Process-{processId}: No more tasks, exiting.")
-#             break
-#         taskQueue.task_done()
 
 if __name__ == "__main__":
     start = datetime.now()
@@ -155,7 +138,7 @@ if __name__ == "__main__":
 
     for month, metadata in months.items():
         comics = metadata.get("comics", [])
-        for comic in comics: 
+        for comic in comics:
             taskQueue.put([month, comic])
             
     # Start worker processes

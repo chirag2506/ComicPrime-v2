@@ -13,31 +13,25 @@ cred = credentials.Certificate("files/json/credentials.json")
 app = firebase_admin.initialize_app(cred)
 db = firestore.client()
 
-# months = readJson("files/json/comics1970s.json")
-# months = readJson("files/json/comics1980s.json")
-# months = readJson("files/json/comics1990s.json")
-# months = readJson("files/json/comics2000s.json")
-# months = readJson("files/json/comics2010s.json")
-months = readJson("files/json/comics2020s.json")
-
+months = readJson("files/json/comics1990s.json")
 regex = "Vol [0-9]+"
 comicsRef = db.collection("comics")
+skippedComics = {}
 
-def checkComicDetails(month, comic):
-    pattern = re.compile(regex)
-    occ = pattern.finditer(comic)
-    occ = tuple(occ)
-    if(len(occ) == 1):
-        cMonth = month.split(",")[0].strip()
-        cYear = int(month.split(",")[1].strip())
-        name = comic[ : occ[0].start()].strip()
-        vol = int(comic[occ[0].start()+4 : occ[0].end()+1].strip())
-        issue = comic[occ[0].end()+1 : ]
-        query = comicsRef.where(
-                filter=FieldFilter("title", "==", name)
-            ).where(filter=FieldFilter("volume", "==", vol)).where(filter=FieldFilter("issue", "==", str(issue))).get()
-        if (len(query) != 1 ):
-            log.info("{} for {} Vol {} Issue {}: {} {}".format(len(query), name, vol, issue, cMonth, cYear))
+def deleteComic(month, comic):
+    try:
+        pattern = re.compile(regex)
+        occ = pattern.finditer(comic)
+        occ = tuple(occ)
+        if(len(occ) == 1):
+            name = comic[ : occ[0].start()].strip()
+            vol = int(comic[occ[0].start()+4 : occ[0].end()+1].strip())
+            issue = comic[occ[0].end()+1 : ]
+            keyName = re.sub("[^A-Za-z0-9]+", "", "{}vol{}issue{}".format(name, vol, issue)).lower()
+            comicsRef.document(keyName).delete()
+    except Exception as e:
+        log.error("Error in deleting {}: {}".format(comic, e))
+        
 
 # Worker function for processing tasks
 def workerComic(taskQueue, processId):
@@ -45,7 +39,7 @@ def workerComic(taskQueue, processId):
         try:
             task = taskQueue.get(timeout=30)
             print(f"Comic worker Process-{processId} processing {task}")
-            checkComicDetails(task[0], task[1])
+            deleteComic(task[0], task[1])
         except multiprocessing.queues.Empty:
             print(f"Comic worker Process-{processId}: No more tasks, exiting.")
             break
@@ -61,9 +55,9 @@ if __name__ == "__main__":
     taskQueue = manager.Queue()
 
     for month, metadata in months.items():
-        comics = metadata.get("comics", [])
-        for comic in comics:
-            taskQueue.put([month, comic])
+            comics = metadata.get("comics", [])
+            for comic in comics:
+                taskQueue.put([month, comic])
             
     # Start worker processes
     processes: list[multiprocessing.Process] = []
@@ -75,5 +69,6 @@ if __name__ == "__main__":
 
     for p in processes:
         p.join()
+    
 
     print("All tasks completed.")
