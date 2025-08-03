@@ -7,6 +7,8 @@ import { Container, Typography, Paper, MenuItem, Select, FormControl, InputLabel
 
 
 import ComicCard from "@/components/ComicCard";
+import bg1 from "@/assets/comicBackgrounds/bg1.png";
+
 
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December",];
 
@@ -104,6 +106,9 @@ export default function Browse() {
         reprint={true}
         toBeRead={false}
         url="https://marvel.fandom.com/wiki/%27Breed_II_Vol_1_1"
+        backgroundImage={bg1}
+        textColor="#ffffff"
+        buttonColor="#ffd600"
       />
     </Container>
   );
