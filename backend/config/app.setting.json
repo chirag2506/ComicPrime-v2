@@ -3,7 +3,14 @@
         "BaseDir": "{basePath}",
         "Mode" : 0,
         "Host" : "0.0.0.0",
-        "Port" : 8080
+        "Port" : 8080,
+        "Headers": {
+            "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+            "X-Frame-Options": "DENY",
+            "X-Content-Type-Options": "nosniff",
+            "Access-Control-Allow-Origin": "*",
+            "Permissions-Policy": ""
+        }
     },
     "Database":{
         
