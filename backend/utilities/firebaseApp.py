@@ -4,4 +4,4 @@ from firebase_admin import firestore
 
 cred = credentials.Certificate("config/credentials.json")
 app = firebase_admin.initialize_app(cred)
-db = firestore.client(app)
+db = firestore.client(app, database_id = "(default)") # check if ID is correct
